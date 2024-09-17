@@ -6,8 +6,10 @@
         <% unless article.archived? %>
             <div class="card">
                 <div class="card header">
-                    <h3><%= link_to article.title.titlecase, article_path(article) %></h3>
-                    <p>Posted <%= time_ago_in_words(article.created_at) %> ago... <i>by <%= article.user.first_name.titlecase %>  </i> </p>                    
+                    <h3><%= link_to article.title.titlecase, article %></h3>
+                    <p>Posted <%= time_ago_in_words(article.created_at) %> ago... <i>by <%= article.@user.first_name.titlecase %>  <%= @article.@user.last_name.titlecase %></i> </p>
+
+                    
                 </div>
                 <div class="card-body">
                 <p><%= article.description %></p>

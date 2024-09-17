@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card header">
                     <h3><%= link_to article.title.titlecase, article_path(article) %></h3>
-                    <p>Posted <%= time_ago_in_words(article.created_at) %> ago... <i>by <%= article.user.first_name.titlecase %>  </i> </p>                    
+                    <p>Posted <%= time_ago_in_words(article.created_at) %> ago... <i>by <%= article.(user.first_name).titlecase if article.user %>  </i> </p>                    
                 </div>
                 <div class="card-body">
                 <p><%= article.description %></p>
