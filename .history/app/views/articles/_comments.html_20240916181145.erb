@@ -1,0 +1,18 @@
+<div>
+    <% @articles.comments.each do |comment| %>
+        <div class="card">
+            <div class="card header">
+                <%= link_to article.title.titlecase, article %><br/>
+                <%= article.description %>
+            </div>
+            <div class="card-body">
+                <p><%= article.body %></p>
+                <p>Posted <%= time_ago_in_words(article.created_at) %>ago...</p>
+            </div>
+            <div class="card-footer">
+                <i>Ref: <%= article.reference %>...</i>
+            </div>
+        </div>
+        <hr/>
+    <% end %>
+</div>

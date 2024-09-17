@@ -1,0 +1,19 @@
+<div>
+
+    <div>
+        <%= render "article" %>
+        <%= render "comments" %>
+        <%= link_to "Back to articles list", articles_path %>
+        <%= link_to "Edit Article", edit_article_path(@article) %>
+        <%= link_to "Delete Article", article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+    
+    <div>
+        <%= render "comment" %>
+    </div>
+    
+    <div>
+        <p></p>
+    </div>
+
+</div>

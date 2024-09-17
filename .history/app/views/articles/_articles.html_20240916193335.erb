@@ -1,0 +1,23 @@
+<div>
+<p>
+    Our Blog has <%= Article.public_count %> articles and counting!
+</p>
+    <% @articles.each do |article| %>
+        <% unless article.archived? %>
+            <div class="card">
+                <div class="card header">
+                    <h3><%= link_to article.title.titlecase, article %></h3>
+                    <p><%= article.description %></p>
+                </div>
+                <div class="card-body">
+                    <p><%= article.body %></p>
+                    <p>Posted <%= time_ago_in_words(article.created_at) %>ago...</p>
+                </div>
+                <div class="card-footer">
+                    <i>Ref: <%= article.reference %>...</i>
+                </div>
+            </div>
+            <hr/>
+        <% end %>    
+    <% end %>
+</div>

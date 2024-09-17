@@ -1,0 +1,21 @@
+<div>
+    <h3>Add a comment:</h3>
+</div>
+
+<div>
+    <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+        <p>
+            <%= form.label :name %><br/>
+            <%= form.text_field :commenter %>
+        </p>
+        <p>
+            <%= form.label :comment %><br/>
+            <%= form.text_field :body %>
+        </p>
+        <p>
+            <%= form.submit %>
+        </p>
+        
+
+    <% end %>
+</div>

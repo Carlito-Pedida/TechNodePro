@@ -1,0 +1,16 @@
+<div>
+    <% @articles.comments.each do |comment| %>
+        <div class="card">
+            <p>
+                <strong>Commenter:</strong>
+                <%= comment.commenter %>
+                
+            </p>
+            <p>
+                <%= form.label :body %><br/>
+                <%= form.text_field :body %>
+            </p>
+        </div>
+        <hr/>
+    <% end %>
+</div>

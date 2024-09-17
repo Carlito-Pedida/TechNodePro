@@ -1,0 +1,33 @@
+<div>
+    <h3>Create Article</h3>
+    <div>
+        <%= form_with model: @article do |form| %>
+            <div>
+                <%= form.label :title %> <br/>
+                <%= form.text_field :title  %>
+            </div> 
+            <div>
+                <%= form.label :description %> <br/>
+                <%= form.text_area :description  %>
+            </div>
+            <div>
+                <%= form.label :body %> <br/>
+                <%= form.text_area :body  %>
+            </div>
+            <div>
+                <%= form.label :reference %> <br/>
+                <%= form.text_area :reference  %>
+            </div>
+            <div>
+                <%= form.label :status %>
+                <%= form.select :status, Visible::VALID_STATUSES, selected:  @article.status || "public" %>
+            </div>
+
+            <div>
+                <%= form.submit  %>
+            </div>
+           
+        <% end %>
+    </div>
+
+</div>
