@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "about", to: "home#about"
 
   get "signup", to: "users#new"
-  resources :users, except: [:new]
+  post "users" to: "user#create"
 
   resources :articles do
     resources :comments
