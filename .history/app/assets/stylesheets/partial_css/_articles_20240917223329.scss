@@ -1,0 +1,26 @@
+.card-frame{
+padding: 20px;
+border-radius: 25px;
+color: white;
+background: #54b3d6;
+background: linear-gradient(to right, #2e81ec, #33aeff, #33aeff, #2e81ec);
+}
+
+@media (max-width: 768px)  {
+    .card_frame {
+      flex-direction: column; /* Single layer for medium screens */
+    }
+  }
+
+.avatar{
+border-radius: 50px;
+padding-top: 8px;
+background-color: #2ea217;
+border: solid 2px;
+height: 35px;
+width: 35px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
