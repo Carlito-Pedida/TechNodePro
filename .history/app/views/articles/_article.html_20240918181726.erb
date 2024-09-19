@@ -1,0 +1,32 @@
+
+    <div class="card-box">
+        <div>
+            <div class="card-head col-8">
+                <div class="avatar mb-2 col-2">
+                        <h5><%= @article.user.first_name[0].titlecase%><%= @article.user.last_name[0].titlecase%></h5>
+                </div>
+                <div >
+                    <h3><%= @article.title.titlecase %></h3>
+                    <p>Posted <%= time_ago_in_words(@article.created_at) %> ago... <i>by <%= @article.user.first_name.titlecase %>  <%= @article.user.last_name.titlecase%></i> </p>
+                </div>
+            </div>
+            <div class="card-body">
+                <p><%= @article.description %></p>
+                <p><%= @article.body %></p>
+            </div>
+            <hr/>
+            <div class="card-foot">
+                <p>Reference/s:</p>
+                <li class="ps-3"><%= @article.reference %>...</li>
+            </div>
+        </div>
+        <div class="col-4">
+            <div>
+                <img src="<%= @article.image_link %>" class="card-img-top mb-2" alt="Article Image" >
+            </div>
+        </div>
+    </div>
+   
+             
+
+

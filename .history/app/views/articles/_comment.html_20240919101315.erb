@@ -1,0 +1,13 @@
+<div>
+    <h3>Add a comment:</h3>
+</div>
+<div>
+    <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+    
+        <div  class="mb-3">
+            <%= form.label :comment, class: "form-label" %><br/>
+            <%= form.text_area :body,  class="form-control"  %>
+        </div>
+        
+    <% end %>
+</div>

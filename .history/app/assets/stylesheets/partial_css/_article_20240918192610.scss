@@ -1,0 +1,28 @@
+
+.card-head{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    column-gap: 10px;
+  }
+.avatar{
+    border-radius: 50px;
+    padding-top: 8px;
+    background-color: #54b3d6;
+    border: solid 2px rgb(178, 178, 178);
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+
+
+.art-image{
+   height: 50%;
+}
