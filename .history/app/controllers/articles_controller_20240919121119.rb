@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
      @article = Article.new(article_contents)
      @article.user = User.find(4)
      if @article.save
+      
       redirect_to @article
       flash[:notice] = "Article was created successfully."
      else
