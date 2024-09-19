@@ -1,0 +1,12 @@
+<div class="btn-group">
+<button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    What would you like to do?
+</button>
+<ul class="dropdown-menu">
+    <li><%= link_to "Create New Article", new_article_path, class: "dropdown-item" %></li>
+    <li><%= link_to "Edit Article", edit_article_path(@article), class: "dropdown-item" %></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Bact to Articles</a></li>
+</ul>
+</div>

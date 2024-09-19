@@ -1,0 +1,22 @@
+<div>
+    <p>
+        Our Blog has <%= Article.public_count %> articles and counting!
+    </p>
+    <% @articles.each do |article| %>
+        <% unless article.archived? %>
+            <div class="card-frame shadow">
+                <div class="">
+                    <h3><%= link_to article.title.titlecase, article_path(article) %></h3>
+                    <p>Posted <%= time_ago_in_words(article.created_at) %> ago... <i>by <%= article.user.first_name.titlecase %>  </i> </p>                    
+                </div>
+                <div class="card-body">
+                <p><%= article.description %></p>
+                    <p><%= article.body %></p>
+                </div>
+                <div class="card-footer">
+                    <i>Ref: <%= article.reference %>...</i>
+                </div>
+            </div>
+        <% end %>    
+    <% end %>
+</div>

@@ -1,0 +1,36 @@
+<div class="card p-5  shadow-sm">
+    <div class="card-head">
+        <div class="avatar">
+        <% if @article.user.user_image.present? %>
+                <img src="<%= @article.user.user_image %>"  class="user_image" alt="User Image"
+                <h5><%= @article.user.first_name[0].titlecase%><%= @article.user.last_name[0].titlecase%></h5>
+        </div>
+        <div>
+            <h3><%= @article.title.titlecase %></h3>
+            Posted <%= time_ago_in_words(@article.created_at) %> ago... <i>by <%= @article.user.first_name.titlecase %>  <%= @article.user.last_name.titlecase%></i>
+        </div>      
+    </div>
+    <hr/>
+    <div class="card_body ">
+        <div  class="d-flex justify-content-evenly align-items-center row">
+            <div class="col-lg-8">
+                <p><%= @article.description %></p>
+                <p><%= @article.body %></p>
+            </div>
+            <div  class="image-box col-lg-4 mb-3">
+            <img src="<%= @article.image_link %>" class="rounded-3" alt="Article Image" >
+            </div>
+                <hr/>
+            <div class="card-foot">
+                <p>Reference/s:</p>
+                <li class="ps-3"><%= @article.reference %>...</li>
+            </div>
+        </div>
+    </div>
+</div>     
+        
+
+   
+             
+
+

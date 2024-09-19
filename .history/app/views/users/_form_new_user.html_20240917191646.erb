@@ -1,0 +1,49 @@
+<div>
+    <h3>Sign Up</h3>
+    <div class="container row justify-content-center">
+        <%= form_with(model: @user, class: "shadow px-3 mb-3 bg-info rounded text-light") do |form| %>
+            <div  class="form-group row">
+                <%= form.label :first_name, class: "shadow col-md-2 col-form-label" %>
+                <div class=" col-md-10">
+                <%= form.text_field :first_name, class: "form-control shadow rounded", placeholder: "first name"  %>
+                </div>
+            </div> 
+            <br/>
+            <div  class="form-group row">
+                <%= form.label :last_name, class: "shadow col-md-2 col-form-label" %><br/>
+                <div class=" col-md-10">
+                <%= form.text_field :last_name, class: "form-control shadow rounded", placeholder: "last name"  %>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group row">
+                <%= form.label :email, class: "shadow col-md-2 col-form-label" %> <br/>
+                <div class=" col-md-10">
+                <%= form.email_field :email, class: "form-control shadow rounded", placeholder: "email"  %>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group row">
+                <%= form.label :username, class: "shadow col-md-2 col-form-label" %> <br/>
+                <div class=" col-md-10">
+                <%= form.text_field :username, class: "form-control shadow rounded", placeholder: "username"  %>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group row">
+                <%= form.label :password, class: "shadow col-md-2 col-form-label" %> <br/>
+                <div class=" col-md-10">
+                <%= form.password_field :password, class: "form-control shadow rounded", placeholder: "password"  %>
+                </div>
+            </div>
+            <br/>
+            <div class="form-group row justify-content-center container">
+               
+                <%= form.submit class: "btn btn-outline-light btn-lg"  %>
+             
+            </div>
+           
+        <% end %>
+    </div>
+
+</div>

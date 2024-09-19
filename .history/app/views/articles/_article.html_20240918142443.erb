@@ -1,0 +1,19 @@
+<div
+        <div class="card p-4">
+            <div >
+            <%= @article.image_link %>
+
+                <h3><%= @article.title.titlecase %></h3>
+                <p>Posted <%= time_ago_in_words(@article.created_at) %> ago... <i>by <%= @article.user.first_name.titlecase %>  <%= @article.user.last_name.titlecase%></i> </p>
+            </div>
+            <div class="card-body">
+            <p><%= @article.description %></p>
+                <p><%= @article.body %></p>
+            </div>
+            <hr/>
+            <div class="">
+                <i>Ref: <%= @article.reference %>...</i>
+            </div>
+        </div>
+      
+</div>
