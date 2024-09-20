@@ -1,0 +1,45 @@
+<div class="card p-5  shadow-sm">
+    <div class="card-head">
+         <% if @user.user_image.present? %>
+         <div class="picture_box">
+        <img src="<%= @user.user_image%>">
+        </div>
+         <% else %>
+        <div class="avatar">
+                <h5><%= @user.first_name[0].titlecase%><%= @user.last_name[0].titlecase%></h5>
+        </div>
+        <% end %>     
+    </div>
+    <hr/>
+    <div class="card_body ">
+        <div  class="d-flex justify-content-evenly align-items-center row">
+            <div class="col-lg-8">
+                <p><%= @user %></p>
+               
+            </div>
+            <div  class="image-box col-lg-4 mb-3">
+            <img src="<%= @user.user_image %>" class="rounded-3" alt="User Image" >
+            </div>
+                <hr/>
+            <div class="card-foot">
+                <p>Contributions:</p>
+                <div>
+                <%= @user.articles %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+
+
+
+
+
+
+
+        
+
+   
+             
+
+
