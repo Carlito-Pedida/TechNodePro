@@ -1,0 +1,126 @@
+// .card {
+//     display: flex;
+//     flex-direction: column;
+//     height: 100%;
+// }
+
+
+
+.img-placeholder{
+   height: 75px;
+   width: 75px;
+    padding-top: 10px;
+    background-color: #cfd0d0;
+    border: solid 2px rgb(178, 178, 178);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow:hidden;
+    color: white;
+    text-decoration: none;
+}
+.img-placeholder:hover{
+    background-color: #cfd0d0;
+    box-shadow: inset 200px 0 0 0 #54b3d6;;
+}
+.profile-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-image-container {
+    height: 200px; /* Set a fixed height for the image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.user-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container and maintains aspect ratio */
+}
+
+.user-picture-box{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow:hidden;
+}
+
+.user-picture-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.art_button {
+    margin-top: auto; /* Ensures the button stays at the bottom */
+}
+
+.user-link-action {
+    box-shadow: inset 0 0 0 0 #54b3d6;
+    color: #54b3d6;
+    padding: 0 .25rem;
+    margin: 0 -.25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+  .user-link-action:hover {
+    color: #fff;
+    box-shadow: inset 300px 0 0 0 #54b3d6;;
+  }
+  
+  /* Presentational styles */
+  .user-link-action {
+    color: #4d5e6c;
+    font-family: 'Poppins', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+  }
+
+  .initials h3 a {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #cfd0d0;
+    color: #4d5e6c;
+    text-decoration: none;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.initials h3 a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #54b3d6;
+    transition: left 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.initials h3 a:hover::before {
+    left: 0;
+}
+
+.initials h3 a:hover {
+    color: white;
+}
+
+

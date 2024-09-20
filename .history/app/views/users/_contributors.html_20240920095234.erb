@@ -1,0 +1,36 @@
+<div class="row container">
+    <% @users.each do |user| %>
+        <div  class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="card shadow h-100 d-flex flex-column" style="width: 100%;">
+        <div class="user-image-container">
+        <% if user.user_image.present? %>
+        <div class="user-picture-box">
+     
+       <%= link_to image_tag(user.user_image), user_path(user), class: "profile-image" %>
+
+       </div>
+        <% else %>
+       <div class="img-placeholder">
+               <h3><%= link_to "#{user.first_name[0].titlecase}#{user.last_name[0].titlecase}", user_path(user),  class: "user-link-action" %></h3>
+               
+       </div>
+       <% end %>
+        </div>
+            <div class="card-body bg-info">
+                <div class="card-title">
+                    <div>
+                    <h5>
+                    <%= link_to "#{user.first_name.titlecase} #{user.last_name.titlecase}", user_path(user),  class: "user-link-action" %>
+                    </h5>
+                    @<%= user.username class: "text-gray" %><br/>
+                    <%= user.email%>
+                    </div>
+                </div>
+                <div class="text-end art_button">
+                </div>
+            </div>
+        </div>  
+        </div>
+       
+    <% end %>
+    </div>
