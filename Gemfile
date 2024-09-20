@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 
-gem 'will_paginate', '~> 4.0'
+gem "will_paginate", "~> 4.0"
 
 gem "bootstrap", "~> 5.3.3"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

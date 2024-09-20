@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
-
     def New
-
     end
 
     def create
@@ -21,5 +19,4 @@ class SessionsController < ApplicationController
         flash[:notice] = "You are successfuly logged out"
         redirect_to root_path
     end
-
 end
