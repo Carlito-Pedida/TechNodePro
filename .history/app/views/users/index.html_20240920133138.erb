@@ -1,0 +1,10 @@
+<div>
+<%= render "elements/users-banner" %>
+</div>
+    <div class="articles container mt-5">
+        <%= render "contributors" %>
+        <div class="flickr_pagination text-center">
+            <%= will_paginate @users, :container => false %> 
+        </div>
+    </div>
+</div>

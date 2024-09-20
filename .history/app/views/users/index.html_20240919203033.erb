@@ -1,0 +1,32 @@
+<div>
+    <div class="row mt-5 container justify-content-center">
+    <% @users.each do |user| %>
+       
+        <div  class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 d-flex flex-column" style="width: 100%;">
+        <div class="image-container">
+        <% if user.user_image.present? %>
+        <div class="user-picture_box">
+       <img src="<%= user.user_image%>">
+       </div>
+        <% else %>
+       <div class="user-avatar">
+               <h5><%= user.first_name[0].titlecase%><%= user.last_name[0].titlecase%></h5>
+       </div>
+       <% end %>
+        </div>
+            <div class="card-body bg-info text-white">
+                <div class="card-title">
+                    <div>
+                    <h5><%= user.first_name.titlecase%><%= user.last_name.titlecase%></h5>
+                    </div>
+                </div>
+                <div class="text-end art_button">
+                </div>
+            </div>
+        </div>  
+        </div>
+       
+    <% end %>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div>
+<%= render "elements/users-banner" %>
+</div>
+    <div class="articles container mt-5 text-center">
+        <%= render "contributors" %>
+        <div class="flickr_pagination" style="display: inline-block; margin: 0 auto;">
+            <%= will_paginate @users, :container => false %> 
+        </div>
+    </div>
+</div>
