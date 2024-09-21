@@ -1,0 +1,13 @@
+<div class="btn-group">
+<button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    What would you like to do?
+</button>
+<ul class="dropdown-menu">
+     <% if @article.present? %>
+    <li><%= link_to "Edit Article", edit_article_path(@article), class: "dropdown-item" %></li>
+    <li><%= link_to "Delete Article", article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "dropdown-item" %></li>
+        <% end %>
+    <li><hr/></li>
+    <li><%= link_to "Back to articles list", articles_path, class: "dropdown-item" %></li>
+</ul>
+</div>
