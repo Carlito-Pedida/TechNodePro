@@ -14,10 +14,10 @@
         <%= link_to "Contributors", users_path, class: "nav-link #{'active' if current_page?(users_path)}" %>
        </li>
        <li class="nav-item">
-       <%= link_to "Blog", blog_path, class: "nav-link #{'active' if current_page?(blog_path)}" %>
+       <%= link_to "Blog", root_path, class: "nav-link #{'active' if current_page?(root_path)}" %>
       </li>
       <li class="nav-item">
-       <%= link_to "Tech_Zone", tech_zone_path, class: "nav-link #{'active' if current_page?(tech_zone_path)}" %>
+       <%= link_to "Tech_Zone", root_path, class: "nav-link #{'active' if current_page?(root_path)}" %>
       </li>
       <li class="nav-item">
        <%= link_to "About", about_path, class: "nav-link #{'active' if current_page?(about_path)}" %>
@@ -30,7 +30,7 @@
 
       <% if current_user.user_image.present? %>
       <div class="picture_box mx-3">
-       <%= link_to image_tag(current_user.user_image), user_path(current_user), class: "profile-image" %>
+      <img src="<%= current_user.user_image%>">
       </div>
       <% else %>
       <div class="avatar">

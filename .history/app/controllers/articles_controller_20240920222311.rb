@@ -1,13 +1,14 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [ :show, :edit, :update, :destroy ]
-  before_action :require_user, except: [ :show, :index ]
-  before_action :require_same_user, only: [ :edit, :update, :destroy ]
+  before_action : set_article, only: [:show, :edit, :update, :destroy]
+
+
 
   def index
     @articles = Article.paginate(page: params[:page], per_page: 4)
   end
 
   def show
+    @article = Article.find(params[:id])
   end
 
   def new
@@ -26,9 +27,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
   end
 
   def update
+    @article = Article.find(params[:id])
+
     if @article.update(article_contents)
       flash[:notice] = "Article was updated successfully"
       redirect_to @article
@@ -38,6 +42,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    @article = Article.find(params[:id])
     @article.destroy
     flash[:notice] = "Article deleted."
     redirect_to articles_path, status: :see_other
@@ -46,16 +51,5 @@ class ArticlesController < ApplicationController
   private
   def article_contents
     params.require(:article).permit(:title, :description, :body, :reference, :image_link, :status)
-  end
-
-  def set_article
-    @article = Article.find(params[:id])
-  end
-
-  def require_same_user
-    if current_user != @article.user
-      flash[:alert] = "You are not allowed to perform this operation"
-      redirect_to @article
-    end
   end
 end

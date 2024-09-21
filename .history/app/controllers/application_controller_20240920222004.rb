@@ -17,5 +17,4 @@ class ApplicationController < ActionController::Base
       flash[:alert] = "Your are not allowed to perform this operation. Please sign up or sign in."
       redirect_to login_path
     end
-  end
 end

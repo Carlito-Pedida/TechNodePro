@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "pages#home"
   get "about", to: "pages#about"
   get "blog", to: "pages#blog"
-  get "tech_zone", to: "pages#tech_zone"
+  get "tech_zone", to: "page#tech_zone"
 
   get "signup", to: "users#new"
   resources :users, except: [ :new ]

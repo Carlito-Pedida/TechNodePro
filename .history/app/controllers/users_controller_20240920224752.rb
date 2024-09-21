@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [ :show, :update, :edit ]
-    before_action :require_user, only: [ :edit, :update ]
-    before_action :require_same_user, only: [ :edit, :update ]
+    before_action :require_user, only: [:edit, :update]
+    before_action :require_same_user, only: [:edit, :update]
 
     def show
         @articles = @user.articles
