@@ -14,8 +14,7 @@
     <li><%= link_to "Tech_Zone", root_path, class: "dropdown-item" %></li>
     <li><hr class="dropdown-divider"></li>
      <li><%= link_to "Delete my profile", user_path(current_user), data: {turbo_method: :delete, turbo_confirm: "WARNING! this operation can not be undone!"}, class: "dropdown-item text-danger" %></li>
-    
-     <% if logged_in? && current_user.admin? && !@user.admin%>
+      <% if logged_in? && current_user.admin? && !@user.admin%>
      <li><hr class="dropdown-divider"></li>
      <li><%= link_to "Delete THIS member", user_path(@user), data: {turbo_method: :delete, turbo_confirm: "WARNING! You are about to delete a contributor account.\nThis operation can NOT be undone!\nProceed?"}, class: "dropdown-item text-danger" %></li>
      <% end %>

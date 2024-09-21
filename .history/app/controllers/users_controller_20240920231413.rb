@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [ :show, :edit, :update, :destroy ]
     before_action :require_user, only: [ :edit, :update ]
-    before_action :require_same_user, only: [ :edit, :update, :destroy ]
+    before_action :require_same_user, only: [ :edit, :update ]
 
     def show
         @articles = @user.articles
@@ -41,9 +41,8 @@ class UsersController < ApplicationController
 
     def destroy
         @user.destroy
-        session[:user_id] = nil if @user == current_user
-        flash[:notice] = "Account and all associated articles deleted!"
-        redirect_to root_path
+        session[:user_id] = nil
+        flash[:notice] = "Account and all associated articles deleted"
     end
 
     private
@@ -57,7 +56,7 @@ class UsersController < ApplicationController
     end
 
     def require_same_user
-        if current_user != @user && !current_user.admin?
+        if current_user != @user
             flash[:alert] = "You are not allowed to perform this operation"
             redirect_to @user
         end
