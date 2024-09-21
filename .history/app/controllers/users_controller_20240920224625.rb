@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [ :show, :update, :edit ]
-    before_action :require_user, only: [ :edit, :update ]
-    before_action :require_same_user, only: [ :edit, :update ]
+    before_action :require_user, only: [:edit, :update]
+
 
     def show
         @articles = @user.articles
@@ -52,7 +52,5 @@ class UsersController < ApplicationController
     def require_same_user
         if current_user != @user
             flash[:alert] = "You are not allowed to perform this operation"
-            redirect_to @user
-        end
     end
 end

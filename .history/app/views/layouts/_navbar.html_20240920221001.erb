@@ -30,7 +30,8 @@
 
       <% if current_user.user_image.present? %>
       <div class="picture_box mx-3">
-       <%= link_to image_tag(current_user.user_image), user_path(current_user), class: "profile-image" %>
+   
+       <%= link_to image_tag(current_user.user_image), user_path(current_user)%>
       </div>
       <% else %>
       <div class="avatar">

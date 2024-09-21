@@ -56,7 +56,6 @@ class ArticlesController < ApplicationController
     if current_user != @article.user
       flash[:alert] = "You are not allowed to perform this operation"
       redirect_to @article
-    end
   end
 
 
