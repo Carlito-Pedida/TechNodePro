@@ -1,0 +1,24 @@
+<h4>Comments (<%= @article.comments.length %>)</h4>
+<div class="comments">
+  <% @article.comments.each do |comment| %>
+    <div class="comment my-3">
+        <div>
+            <%= render "shared/article-user-avatar" %>
+            <%= comment.user.username %> <%= comment.body %>
+        </div>
+        
+      <% if logged_in? && (comment.user == current_user || current_user.admin? ) %>
+    <%= link_to "Remove Comment", [comment.article, comment], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>      <h3>Replies</h3>
+    <% end %> 
+    <ul>
+        <% comment.replies.each do |reply| %>
+          <div>
+            <p><%= reply.reply_body %></p>
+            <p>Reply by: <%= reply.user.username %></p>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+

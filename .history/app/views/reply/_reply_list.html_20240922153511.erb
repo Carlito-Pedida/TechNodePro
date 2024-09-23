@@ -1,0 +1,11 @@
+<div class="mt-3">
+    <% @comment.reply.each do |reply| %>
+        <p>
+          <%= reply.reply_body %>
+                <p>
+                    <%= link_to "Delete", [reply.comment, reply], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                </p>
+            </div>
+            <hr/>
+    <% end %>
+</div>

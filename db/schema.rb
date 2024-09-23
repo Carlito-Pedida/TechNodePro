@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_21_042027) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_22_004501) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -18,21 +18,28 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_21_042027) do
     t.text "reference"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
     t.integer "user_id"
     t.text "image_link"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "commenter"
     t.text "body"
-    t.integer "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
     t.integer "user_id", null: false
+    t.integer "article_id", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.text "reply_body"
+    t.integer "comment_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_replies_on_comment_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,5 +54,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_21_042027) do
     t.boolean "admin", default: false
   end
 
+  add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
+  add_foreign_key "replies", "comments"
+  add_foreign_key "replies", "users"
 end

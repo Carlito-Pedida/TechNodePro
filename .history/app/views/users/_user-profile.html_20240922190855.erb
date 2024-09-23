@@ -1,0 +1,64 @@
+<div class="card p-5  shadow-sm">
+    <% if logged_in? && (@user == current_user || current_user.admin? )%>
+        <div class="text-end">
+            <%= link_to edit_user_path(@user), class: "edit" do %>
+                <i class="bi bi-pencil-square"></i>
+            <% end %>
+        </div>
+    <% end %>
+    <div class="profile-head">
+         <% if @user.user_image.present? %>
+             <div class="user-picture_box">
+                 <img src="<%= @user.user_image%>">
+            </div>
+         <% else %>
+            <div class="user-avatar">
+                <h5><%= @user.first_name[0].titlecase%><%= @user.last_name[0].titlecase%></h5>
+            </div>
+        <% end %>   
+        <div>
+            <div class="col">
+                <h5>
+                    <%= @user.first_name %> <%= @user.last_name %><br/>
+                    @<%= @user.username %>
+                </h5>    
+            </div>
+        </div>  
+    </div>
+    <hr/>
+    <div class="profile_body ">
+        <div  class="justify-content-center row">
+            <div class="col text-center">
+                <p><%= @user.first_name %> <%= @user.last_name %>'s Profile</p>
+            </div>
+                <% if @user.user_image.present? %>
+                    <div  class="user-image-box mb-3">
+                        <img src="<%= @user.user_image %>" class="rounded-3" alt="User Image" >
+                    </div>
+                <% else %>
+                    <div  class="user-image-box col-lg-4 mb-3 d-none">
+                    </div>
+                <% end %>
+                    <hr/>
+            <div class="card-foot">
+                <p>Contributions:</p>
+                    <div>
+                        <%= render "articles/articles" %>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>   
+
+
+
+
+
+
+
+        
+
+   
+             
+
+
