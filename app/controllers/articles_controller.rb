@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comments = @article.comments.includes(:replies)
   end
 
   def new
@@ -17,13 +18,16 @@ class ArticlesController < ApplicationController
   def create
      @article = Article.new(article_contents)
       @article.user = current_user
+
      if @article.save
       redirect_to @article
       flash[:notice] = "Article was created successfully."
      else
-      render :new, status: :unprocessable_entity
+      render :new
      end
   end
+
+
 
   def edit
   end
@@ -33,19 +37,19 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was updated successfully"
       redirect_to @article
     else
-      render :edit, status: :unprocessable_entity
+      render :edit
     end
   end
 
   def destroy
     @article.destroy
     flash[:notice] = "Article deleted."
-    redirect_to articles_path, status: :see_other
+    redirect_to articles_path
   end
 
   private
   def article_contents
-    params.require(:article).permit(:title, :description, :body, :reference, :image_link, :status)
+    params.require(:article).permit(:title, :description, :body, :reference, :image_link)
   end
 
   def set_article

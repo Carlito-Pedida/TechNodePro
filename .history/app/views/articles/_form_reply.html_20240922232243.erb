@@ -1,0 +1,31 @@
+<div>
+    <button id="show-reply-form-<%= comment.id %>" class="btn btn-outline-info btn-sm">
+        Reply
+    </button>
+
+    <div id="reply-form-container-<%= comment.id %>" style="display: none;">
+        <%= form_with(model: [ comment, comment.replies.build ]) do |form| %>
+            <p>
+                <%= form.label :reply_body, "Add a Comment" %><br/>
+                <%= form.text_area :reply_body, class: "form-control shadow-sm" %>
+            </p>
+            <div class="text-end mb-5">
+                <%= form.submit "Submit", class: "btn btn-outline-info btn-sm shadow-sm" %>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<script>
+    document.getElementById("show-reply-form-<%= comment.id %>").addEventListener("click", function() {
+        var replyForm = document.getElementById("reply-form-container-<%= comment.id %>");
+        var replyButton = document.getElementById("show-reply-form-<%= comment.id %>");
+        
+        // Show the reply form
+        replyForm.style.display = "block";
+        
+        // Hide the reply button
+        replyButton.style.display = "none";
+    });
+</script>
+

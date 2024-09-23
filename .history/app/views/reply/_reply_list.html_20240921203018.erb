@@ -1,0 +1,18 @@
+<div class="mt-3">
+    <% @replies.each do |reply| %>
+        
+        <p>
+         <%= reply.user.username %>
+          <%= reply.body %>
+           
+           <%= reply.user.email %>
+          <% if reply.user == current_user || current_user.admin? %>
+
+                <p>
+                    <%= link_to "Delete", [reply.comment, reply], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                </p>
+            </div>
+            <hr/>
+        <% end %>    
+    <% end %>
+</div>

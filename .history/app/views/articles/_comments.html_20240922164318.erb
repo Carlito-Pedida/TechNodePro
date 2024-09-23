@@ -1,0 +1,30 @@
+<div class="mt-3">
+    <h5>Top Comments (<%= @article.comments.length %>)</h5>
+    <% @article.comments.each do |comment| %>
+        
+      <div>
+         <%= comment.user.username %>
+          <%= comment.body %>
+          <div>
+          <ul>
+        <% @comment.replies.each do |reply| %>
+            <li>
+                <p><%= reply.user.reply_body %></p>
+                <p>Reply by: <%= reply.user.username %></p>
+            </li>
+        <% end %>
+        </ul>
+          </div>
+        </div>
+
+          <% if comment.user == current_user || current_user.admin? %>  
+                <p>
+                    <%= link_to "Remove Comment", [comment.article, comment], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                </p>
+               
+            </div>
+            <hr/>
+        <% end %>    
+    <% end %>
+  
+</div>

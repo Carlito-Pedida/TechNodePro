@@ -1,0 +1,13 @@
+<div>
+    <%= form_with(model: [ comment, comment.replies.build ]) do |form| %>
+        <p>
+            <%= form.label :reply_body, "Add a Reply" %><br/>
+            <%= form.text_area :reply_body, class: "form-control shadow-sm"  %>
+        </p>
+        <div class="text-end mb-5">
+            <%= form.submit class: "btn btn-outline-info btn-md shadow-sm" %>
+        </div>
+    <% end %>
+</div>
+
+
