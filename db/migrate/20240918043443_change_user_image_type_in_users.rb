@@ -1,5 +1,0 @@
-class ChangeUserImageTypeInUsers < ActiveRecord::Migration[7.2]
-  def change
-    change_column :users, :user_image, :text
-  end
-end
