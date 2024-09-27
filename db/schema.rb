@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_22_004501) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_27_160610) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -18,24 +21,25 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_22_004501) do
     t.text "reference"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.text "image_link"
+    t.bigint "user_id", null: false
+    t.string "image_link"
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
+    t.bigint "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.integer "article_id", null: false
+    t.bigint "user_id", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "replies", force: :cascade do |t|
     t.text "reply_body"
-    t.integer "comment_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "comment_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["comment_id"], name: "index_replies_on_comment_id"
@@ -50,10 +54,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_22_004501) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.text "user_image"
+    t.string "user_image"
     t.boolean "admin", default: false
   end
 
+  add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
   add_foreign_key "replies", "comments"
