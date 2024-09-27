@@ -12,6 +12,7 @@
                 <%= form.text_area :reply_body, class: "form-control shadow-sm" %>
             </p>
             <div class="text-end mb-5">
+                <%= link_to "Cancel", request.referer || @article_path, class: "btn btn-outline-secondary btn-sm shadow-sm" %>
                 <%= form.submit "Submit", class: "btn btn-outline-info btn-sm shadow-sm" %>
             </div>
         <% end %>
