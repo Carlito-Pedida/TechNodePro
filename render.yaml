@@ -1,12 +1,12 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: technodepro-db
+    databaseName: technodepro_db
+    user: technodepro_db_user
     plan: free
 
 services:
   - type: web
-    name: mysite
+    name: TechNodePro
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
