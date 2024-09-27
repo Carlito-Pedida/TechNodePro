@@ -1,9 +1,0 @@
-<% if @user.user_image.present? %>
-             <div class="user-picture_box">
-                 <img src="<%= @user.user_image%>">
-            </div>
-         <% else %>
-            <div class="user-avatar">
-                <h5><%= @user.first_name[0].titlecase%><%= @user.last_name[0].titlecase%></h5>
-            </div>
-        <% end %>  
