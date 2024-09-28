@@ -35,7 +35,7 @@ class UsersController < ApplicationController
             flash[:notice] = "New account created. Welcome to Technode Pro #{@user.first_name}!"
             redirect_to user_path(@user)
         else
-            render "new", status: :unprocessable_entity
+            render "new"
         end
     end
 
