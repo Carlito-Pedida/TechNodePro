@@ -76,6 +76,6 @@ test:
 #
 production:
   <<: *default
-  database: tech_node_pro_production
-  username: tech_node_pro
-  password: <%= ENV["TECH_NODE_PRO_DATABASE_PASSWORD"] %>
+  database: technodepro_mdb2
+  username: technodepro_mdb2_user
+  password: <%= ENV["DATABASE_PASSWORD"] %>
