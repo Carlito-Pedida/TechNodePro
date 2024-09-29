@@ -32,11 +32,11 @@ development:
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  host: localhost
+  # host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  port: 5432
+  # port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -76,6 +76,6 @@ test:
 #
 production:
   <<: *default
-  database: technodepro_mdb2
-  username: technodepro_mdb2_user
-  password: <%= ENV["DATABASE_PASSWORD"] %>
+  database: tech_node_pro_production
+  username: tech_node_pro
+  password: <%= ENV["TECH_NODE_PRO_DATABASE_PASSWORD"] %>
