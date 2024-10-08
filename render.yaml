@@ -2,13 +2,13 @@ databases:
   - name: technodepro
     databaseName: technodepro_db
     user: technodepro_admin
-    plan: free
+    plan: starter
 
 services:
   - type: web
     name: technodepro
     runtime: ruby
-    plan: free
+    plan: stater
     buildCommand: "./bin/render-build.sh"
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
