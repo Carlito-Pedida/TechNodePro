@@ -21,7 +21,7 @@
                     <h5>
                     <%= link_to "#{user.first_name.titlecase} #{user.last_name.titlecase}", user_path(user),  class: "user-link-action" %>
                     </h5>
-                    <p class="text-white">@<%= user.username %></p>
+                    <p class="text-white">@<%= user.username %> <%= "(admin)" if user.admin? %></p>
                     <p class="mailto">
                         <a href="mailto:<%= user.email %>"><%= user.email%></a>
                     </p>
