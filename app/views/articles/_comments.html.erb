@@ -32,7 +32,7 @@
                 <ul class="mx-4"><%= comment.body %></ul>
             </p>
 
-            <% if logged_in? && (comment.user == current_user || current_user.admin? ) %>
+            <% if logged_in? %>
                 <div class="text-center">
                 <%= render "form_reply", comment: comment %>
                 </div>
