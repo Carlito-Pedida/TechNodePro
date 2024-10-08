@@ -19,7 +19,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
 development:
   <<: *default
   database: tech_node_pro_development
@@ -80,6 +79,6 @@ test:
 #
 production:
   <<: *default
-  database: tech_node_pro_production
-  username: tech_node_pro
+  database: technodepro_db
+  username: technodepro_admin
   password: <%= ENV["TECH_NODE_PRO_DATABASE_PASSWORD"] %>

@@ -4,9 +4,11 @@
     <div class="articles container mt-5">
             <%= render "articles" %>
         <div class="dflex page">
-        <div class="flickr_pagination", style="display: inline-block; margin: 0 auto;">
-        <%= will_paginate @articles, :container => false %> 
-        </div>
+       
+  <div class="flickr_pagination" style="display: inline-block; margin: 0 auto;">
+    <%= will_paginate @articles, container: false %>
+  </div>
+
         </div>
        
     </div>

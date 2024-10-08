@@ -3,8 +3,11 @@
 </div>
     <div class="articles container mt-5 text-center">
         <%= render "contributors" %>
+        <% if @users.size >= 5 %>
         <div class="flickr_pagination" style="display: inline-block;">
             <%= will_paginate @users, :container => false %> 
         </div>
+        <% end %>
     </div>
 </div>
+
