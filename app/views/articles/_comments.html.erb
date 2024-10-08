@@ -28,14 +28,15 @@
             <% end %> 
         </div>
 
-        <p>
-        <ul class="mx-4"><%= comment.body %></ul>
-        </p>
+            <p>
+                <ul class="mx-4"><%= comment.body %></ul>
+            </p>
 
-            <div class="text-center">
+            <% if logged_in? && (comment.user == current_user || current_user.admin? ) %>
+                <div class="text-center">
                 <%= render "form_reply", comment: comment %>
-            </div>
-           
+                </div>
+            <% end %> 
 
         <ul class="replies">
         
