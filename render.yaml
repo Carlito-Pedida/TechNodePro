@@ -1,7 +1,7 @@
 databases:
   - name: technodepro
     databaseName: technodepro_db
-    user: technodepro_db_febf_user
+    user: technodepro_admin
     plan: free
 
 services:
