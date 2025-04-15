@@ -4,6 +4,8 @@ source "https://rubygems.org"
 gem "will_paginate", "~> 4.0"
 gem "ostruct"
 gem "bootstrap", "~> 5.3.3"
+gem 'mini_racer'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
